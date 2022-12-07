@@ -1,6 +1,6 @@
 package java.csvtest.api.entities;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class CsvFile {
 	private String primary_key;
@@ -9,7 +9,7 @@ public class CsvFile {
 
     private String description;
 
-    private Date updated_timestamp;
+    private LocalDateTime updated_timestamp;
 
     public CsvFile(String primary_key, String name, String description) {
         this.primary_key = primary_key;
@@ -41,11 +41,11 @@ public class CsvFile {
         this.description = description;
     }
 
-    public Date getUpdated_timestamp() {
+    public LocalDateTime getUpdated_timestamp() {
         return updated_timestamp;
     }
 
-    public void setUpdated_timestamp(Date updated_timestamp) {
+    public void setUpdated_timestamp(LocalDateTime updated_timestamp) {
         this.updated_timestamp = updated_timestamp;
     }
 }
