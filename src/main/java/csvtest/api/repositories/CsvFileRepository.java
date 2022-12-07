@@ -1,15 +1,11 @@
 package csvtest.api.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
 import csvtest.api.entities.CsvFile;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.Optional;
 
 public interface CsvFileRepository extends JpaRepository<CsvFile, Long> {
 
-    @Query("SELECT * FROM CsvFile c WHERE c.primary_key = ?1")
-    Optional<CsvFile> findByPrimaryKey(String primary_key);
-
-    Boolean existsByPrimaryKey(String primary_key);
+    Optional<CsvFile> findByPrimaryKey(String primaryKey);
 }

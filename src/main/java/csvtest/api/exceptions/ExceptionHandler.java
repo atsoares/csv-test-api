@@ -17,9 +17,4 @@ public class ExceptionHandler {
     public ResponseEntity<ErrorResponseTO> handleObjectDoesNotExistException(ObjectDoesNotExistException ex) {
         return new ResponseEntity<>(new ErrorResponseTO("Object does not exist"), HttpStatus.NOT_FOUND);
     }
-
-    @org.springframework.web.bind.annotation.ExceptionHandler(ObjectAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponseTO> handleObjectAlreadyException(ObjectAlreadyExistsException ex) {
-        return new ResponseEntity<>(new ErrorResponseTO("Object already exists"), HttpStatus.CONFLICT);
-    }
 }
