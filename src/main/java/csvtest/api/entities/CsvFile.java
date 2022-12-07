@@ -1,9 +1,13 @@
 package csvtest.api.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
 public class CsvFile {
-	private String primary_key;
+    @Id
+	private String primaryKey;
 	
     private String name;
 
@@ -11,18 +15,22 @@ public class CsvFile {
 
     private LocalDateTime updated_timestamp;
 
-    public CsvFile(String primary_key, String name, String description) {
-        this.primary_key = primary_key;
+    public CsvFile(){
+
+    };
+    public CsvFile(String primaryKey, String name, String description, LocalDateTime updated_timestamp) {
+        this.primaryKey = primaryKey;
         this.name = name;
         this.description = description;
+        this.updated_timestamp = updated_timestamp;
     }
 
-    public String getPrimary_key() {
-        return primary_key;
+    public String getPrimaryKey() {
+        return primaryKey;
     }
 
-    public void setPrimary_key(String primary_key) {
-        this.primary_key = primary_key;
+    public void setPrimaryKey(String primaryKey) {
+        this.primaryKey = primaryKey;
     }
 
     public String getName() {
