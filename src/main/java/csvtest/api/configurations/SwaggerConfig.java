@@ -1,4 +1,4 @@
-package java.csvtest.api.configurations;
+package csvtest.api.configurations;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

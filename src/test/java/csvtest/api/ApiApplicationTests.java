@@ -1,4 +1,4 @@
-package java.csvtest.api;
+package csvtest.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

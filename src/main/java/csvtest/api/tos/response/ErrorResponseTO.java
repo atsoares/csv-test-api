@@ -1,4 +1,4 @@
-package java.csvtest.api.tos.response;
+package csvtest.api.tos.response;
 
 public class ErrorResponseTO {
     private String errorMessage;

@@ -1,17 +1,24 @@
-package java.csvtest.api.service.impl;
+package csvtest.api.service.impl;
 
+import csvtest.api.entities.CsvFile;
+import csvtest.api.exceptions.CSVInvalidException;
+import csvtest.api.exceptions.ObjectAlreadyExistsException;
+import csvtest.api.exceptions.ObjectDoesNotExistException;
+import csvtest.api.repositories.CsvFileRepository;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.csvtest.api.entities.CsvFile;
-import java.csvtest.api.exceptions.CSVInvalidException;
-import java.csvtest.api.exceptions.ObjectAlreadyExistsException;
-import java.csvtest.api.exceptions.ObjectDoesNotExistException;
-import java.csvtest.api.repositories.CsvFileRepository;
-import java.csvtest.api.service.CsvFileService;
+import csvtest.api.entities.CsvFile;
+import csvtest.api.exceptions.CSVInvalidException;
+import csvtest.api.exceptions.ObjectAlreadyExistsException;
+import csvtest.api.exceptions.ObjectDoesNotExistException;
+import csvtest.api.repositories.CsvFileRepository;
+import csvtest.api.service.CsvFileService;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -19,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CsvFileServiceImpl implements CsvFileService {
 
     @Autowired

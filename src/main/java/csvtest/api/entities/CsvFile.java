@@ -1,4 +1,4 @@
-package java.csvtest.api.entities;
+package csvtest.api.entities;
 
 import java.time.LocalDateTime;
 

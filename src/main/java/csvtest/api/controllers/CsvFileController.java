@@ -1,5 +1,8 @@
-package java.csvtest.api.controllers;
+package csvtest.api.controllers;
 
+import csvtest.api.exceptions.CSVInvalidException;
+import csvtest.api.exceptions.ObjectAlreadyExistsException;
+import csvtest.api.exceptions.ObjectDoesNotExistException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -11,14 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.csvtest.api.entities.CsvFile;
-import java.csvtest.api.exceptions.CSVInvalidException;
-import java.csvtest.api.exceptions.ObjectAlreadyExistsException;
-import java.csvtest.api.exceptions.ObjectDoesNotExistException;
-import java.csvtest.api.service.CsvFileService;
+import csvtest.api.entities.CsvFile;
+import csvtest.api.service.CsvFileService;
 import java.io.IOException;
 
-import static java.csvtest.api.constants.Constants.*;
+import static csvtest.api.constants.Constants.*;
 
 @RestController
 @RequestMapping("/csv")

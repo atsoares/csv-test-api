@@ -1,4 +1,4 @@
-package java.csvtest.api.exceptions;
+package csvtest.api.exceptions;
 
 public class ObjectDoesNotExistException extends Exception {
     public ObjectDoesNotExistException() {

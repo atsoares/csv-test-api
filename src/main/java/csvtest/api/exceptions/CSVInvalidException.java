@@ -1,4 +1,4 @@
-package java.csvtest.api.exceptions;
+package csvtest.api.exceptions;
 
 public class CSVInvalidException extends Exception {
     public CSVInvalidException() {

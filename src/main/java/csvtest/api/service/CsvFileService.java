@@ -1,13 +1,12 @@
-package java.csvtest.api.service;
+package csvtest.api.service;
 
+import csvtest.api.entities.CsvFile;
+import csvtest.api.exceptions.CSVInvalidException;
+import csvtest.api.exceptions.ObjectAlreadyExistsException;
+import csvtest.api.exceptions.ObjectDoesNotExistException;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.csvtest.api.entities.CsvFile;
-import java.csvtest.api.exceptions.CSVInvalidException;
-import java.csvtest.api.exceptions.ObjectAlreadyExistsException;
-import java.csvtest.api.exceptions.ObjectDoesNotExistException;
 import java.io.IOException;
-import java.util.List;
 
 public interface CsvFileService {
 

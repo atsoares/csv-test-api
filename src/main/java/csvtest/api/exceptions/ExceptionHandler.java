@@ -1,6 +1,6 @@
-package java.csvtest.api.exceptions;
+package csvtest.api.exceptions;
 
-import java.csvtest.api.tos.response.ErrorResponseTO;
+import csvtest.api.tos.response.ErrorResponseTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

@@ -1,4 +1,4 @@
-package java.csvtest.api.constants;
+package csvtest.api.constants;
 
 public interface Constants {
 

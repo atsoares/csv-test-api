@@ -1,9 +1,9 @@
-package java.csvtest.api.repositories;
+package csvtest.api.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.csvtest.api.entities.CsvFile;
+import csvtest.api.entities.CsvFile;
 import java.util.Optional;
 
 public interface CsvFileRepository extends JpaRepository<CsvFile, Long> {
