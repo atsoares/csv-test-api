@@ -1,5 +1,6 @@
 package csvtest.api.helper;
 
+import csvtest.api.constants.Constants;
 import csvtest.api.entities.CsvFile;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -51,7 +52,7 @@ public class CsvFileHelper {
 
     public static LocalDateTime getConvertedTime(String date){
         if(!date.isEmpty()){
-            return LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
+            return LocalDateTime.parse(date, DateTimeFormatter.ofPattern(Constants.EN_DATE_TIME_FORMAT));
         }
         return null;
     }
