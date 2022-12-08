@@ -15,9 +15,6 @@ public class CsvFile {
 
     private LocalDateTime updated_timestamp;
 
-    public CsvFile(){
-
-    };
     public CsvFile(String primaryKey, String name, String description, LocalDateTime updated_timestamp) {
         this.primaryKey = primaryKey;
         this.name = name;
