@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +53,11 @@ public class CsvFileHelper {
 
     public static LocalDateTime getConvertedTime(String date){
         if(!date.isEmpty()){
-            return LocalDateTime.parse(date, DateTimeFormatter.ofPattern(Constants.EN_DATE_TIME_FORMAT));
+            try{
+                return LocalDateTime.parse(date, DateTimeFormatter.ofPattern(Constants.EN_DATE_TIME_FORMAT));
+            }catch (DateTimeParseException d){
+                throw d;
+            }
         }
         return null;
     }
