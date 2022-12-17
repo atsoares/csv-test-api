@@ -26,10 +26,11 @@ public class CsvFileHelper {
         return true;
     }
 
-    public static List<CsvFile> csvToObject(InputStream is) {
-        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-             CSVParser csvParser = new CSVParser(fileReader,
-                     CSVFormat.RFC4180.builder().setHeader().setSkipHeaderRecord(true).build());) {
+    public static List<CsvFile> csvToObject(InputStream is) throws IOException {
+        try {
+            BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            CSVParser csvParser = new CSVParser(fileReader,
+                    CSVFormat.RFC4180.builder().setHeader().setSkipHeaderRecord(true).build());
 
             List<CsvFile> csvFiles = new ArrayList<CsvFile>();
 
@@ -48,6 +49,8 @@ public class CsvFileHelper {
             return csvFiles;
         } catch (IOException e) {
             throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
+        } finally {
+             is.close();
         }
     }
 
