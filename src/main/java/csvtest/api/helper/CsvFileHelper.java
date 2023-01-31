@@ -14,7 +14,7 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CsvFileHelper {
+public class CsvFileHelper implements Runnable {
     public static String TYPE = "text/csv";
 
     public static boolean hasCSVFormat(MultipartFile file) {
@@ -27,6 +27,9 @@ public class CsvFileHelper {
     }
 
     public static List<CsvFile> csvToObject(InputStream is) throws IOException {
+        
+        Scanner sc = null;
+        
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             CSVParser csvParser = new CSVParser(fileReader,
@@ -37,6 +40,9 @@ public class CsvFileHelper {
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
             for (CSVRecord csvRecord : csvRecords) {
+                if (csvRecord.get("PRIMARY_KEY").isBlank()){
+                    continue;
+                }
                 CsvFile csvFile = new CsvFile(
                         csvRecord.get("PRIMARY_KEY"),
                         csvRecord.get("NAME"),
@@ -64,5 +70,5 @@ public class CsvFileHelper {
         }
         return null;
     }
-
+    
 }
